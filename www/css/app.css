@@ -1,0 +1,76 @@
+/*fonts*/
+@font-face { font-family: GalaxiePolarisCondensed-Book; src: url('../fonts/GalaxiePolarisCondensed-Book.otf'); } 
+@font-face { font-family: GalaxiePolarisCondensed-Bold; font-weight: bold; src: url('../fonts/GalaxiePolarisCondensed-Bold.otf'); }
+@font-face { font-family: GalaxiePolarisCondensed-Light; font-weight: bold; src: url('../fonts/GalaxiePolarisCondensed-Light.otf'); }
+
+#stage{
+    height: 100%;
+    width: 100%;
+    float: left;
+    display: block;
+}
+
+#nav{
+    width: 255px;
+    height: 795px;
+    background-color: #333333;
+    float: left;
+    z-index: 99 !important;
+    border-bottom: 5px solid #e51b2d;
+    font: normal 22px  GalaxiePolarisCondensed-Book;
+    line-height: 22px;
+    text-align: center;
+    margin: 0;
+}
+
+    #nav span.navitem{
+        color: #fff; text-decoration: none; display: block;
+        padding: 20px 0px 20px 0px;
+    }
+
+    #nav span.grey{
+        color: #666666;
+    }
+
+    #panel {
+        float:left;
+        height:795px;
+        position:relative;
+        width: 0px;
+        background-color: #333333;
+        /*background-color: green;*/
+        border-bottom: 5px solid #e51b2d;
+        z-index: 1;
+    }
+        #close{
+            display: none;
+            position: relative;
+            top: 30px;
+            left: 650px;
+        }
+
+        #nav-services, #nav-how, #nav-training{ display: none; }
+
+        .navbox{ 
+            position: relative;
+            left: 20px;
+            top: 30px;
+            height: 500px;
+            width: 650px;
+            background-color: green;
+        }
+
+    #arrow{
+        position: absolute;
+        top: 372px;
+        left: 229px;
+    }
+
+#main{
+    background-color: blue;
+    margin-left: 255px;
+    width: 1025px;
+    height: 800px;
+    background: transparent url('../img/splash.jpg') top left no-repeat; 
+}
+

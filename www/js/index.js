@@ -47,3 +47,80 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+$( document ).ready(function() {
+
+    $('.navitem').click(function(){
+        var id = $(this).attr('id');
+        openPanel(id);
+        $('.navitem').off('click'); //disable nav        
+    });
+
+    $('#close').click(function(){
+        closePanel();
+        $( ".navitem" ).on( "click", function() {
+            var id = $(this).attr('id');
+            openPanel(id);
+            $('.navitem').off('click');
+        });
+    });
+
+});
+
+var openPanel = function(id){
+    $("#panel").addClass("open");
+    $("#arrow").hide();
+
+    switch(id){
+        case "services":
+            $("#how").addClass("grey");
+            $("#training").addClass("grey");
+        break;
+
+        case "how": 
+            $("#services").addClass("grey");
+            $("#training").addClass("grey");
+        break;
+
+        case "training": 
+            $("#services").addClass("grey");
+            $("#how").addClass("grey");
+        break;
+    }
+
+    $( "#panel" ).animate({
+      width: "+=750"
+      }, 300, function() {
+        // Animation complete.
+        $("#close").fadeIn();  
+        loadNavContent(id);
+    });
+}
+
+var closePanel = function(){
+    
+    $("#panel").removeClass("open");
+
+    $("#close").hide();
+
+    $("#services").removeClass("grey");
+    $("#how").removeClass("grey");
+    $("#training").removeClass("grey");
+    hideNavItems();
+    $( "#panel" ).animate({
+      width: "-=750"
+      }, 300, function() {
+        
+        // Animation complete.
+    });
+}
+
+var loadNavContent = function(id){
+    $("#nav-"+id).fadeIn();
+}
+
+var hideNavItems = function(){
+    $("#nav-services").fadeOut();
+    $("#nav-how").fadeOut();
+    $("#nav-training").fadeOut();
+}
