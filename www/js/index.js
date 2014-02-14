@@ -49,6 +49,7 @@ var app = {
 };
 
 $( document ).ready(function() {
+    //$("#nav").load("nav/main.html");
 
     $('.navitem').click(function(){
         var id = $(this).attr('id');
@@ -68,8 +69,10 @@ $( document ).ready(function() {
 });
 
 var openPanel = function(id){
+    
     $("#panel").addClass("open");
     $("#arrow").hide();
+
 
     switch(id){
         case "services":
@@ -98,29 +101,127 @@ var openPanel = function(id){
 }
 
 var closePanel = function(){
-    
+
+    hideNavItems();
     $("#panel").removeClass("open");
-
-    $("#close").hide();
-
     $("#services").removeClass("grey");
     $("#how").removeClass("grey");
     $("#training").removeClass("grey");
-    hideNavItems();
+
     $( "#panel" ).animate({
       width: "-=750"
       }, 300, function() {
-        
-        // Animation complete.
+        //put the arrow back, if we need it
+        if( $('#main>#arrow') ) {
+            $("#arrow").show();
+        }
     });
+    $("#close").hide();
 }
 
 var loadNavContent = function(id){
-    $("#nav-"+id).fadeIn();
+   // $("#nav-"+id).load("nav/"+id+".html").fadeIn();
+   $("#nav-"+id).fadeIn();
 }
 
 var hideNavItems = function(){
-    $("#nav-services").fadeOut();
-    $("#nav-how").fadeOut();
-    $("#nav-training").fadeOut();
+    $("#nav-services").fadeOut(300);
+    $("#nav-how").fadeOut(300);
+    $("#nav-training").fadeOut(300);
 }
+
+var loadMainContent = function(c){
+    $('#main').fadeOut(10);
+    hideNavItems();
+    $("#panel").removeClass("open");
+    $("#services").removeClass("grey");
+    $("#how").removeClass("grey");
+    $("#training").removeClass("grey");
+
+    $( "#panel" ).animate({
+      width: "-=750"
+      }, 300, function() {
+        // Animation complete.
+        $('#main').load("content/"+c+".html").fadeIn(500);
+        //alert("done");
+    });
+    $("#close").hide();
+
+    $( ".navitem" ).on( "click", function() {
+        var id = $(this).attr('id');
+        openPanel(id);
+        $('.navitem').off('click');
+    });      
+}
+
+var loadIndex = function(){
+    $('#main').fadeOut(10);
+    $("#close").hide();
+
+    if($('#panel').hasClass('open')){
+
+        hideNavItems();
+        $("#panel").removeClass("open");
+        $("#services").removeClass("grey");
+        $("#how").removeClass("grey");
+        $("#training").removeClass("grey");
+
+        $( "#panel" ).animate({
+          width: "-=750"
+          }, 300, function() {
+            // Animation complete.
+            $('#main').load("content/index-content.html").fadeIn(500);
+            //alert("done");
+        });
+        $("#close").hide();
+
+        $( ".navitem" ).on( "click", function() {
+            var id = $(this).attr('id');
+            openPanel(id);
+            $('.navitem').off('click');
+        });   
+
+
+    } else {
+    
+        $('#main').fadeOut(10);
+        $('#main').load("content/index-content.html").fadeIn(500);    
+      
+    }
+
+
+ 
+}
+
+
+$('#logo').click(function(){  loadIndex() });
+//services
+$('#snowservices-nav').click(function(){   loadMainContent("snow-services")   });
+$('#hockeyservices-nav').click(function(){ loadMainContent("hockey-services") });
+$('#bikeservices-nav').click(function(){   loadMainContent("bike-services")   });
+$('#otherservices-nav').click(function(){  loadMainContent("other-services")  });
+
+//how we do it
+$('#snowhow-nav').click(function(){ loadMainContent("snow-how") });
+$('#hockeyhow-nav').click(function(){ loadMainContent("hockey-how") });
+$('#bikehow-nav').click(function(){ loadMainContent("bike-how") });
+$('#otherhow-nav').click(function(){ loadMainContent("other-how") });
+
+//training
+$('#ourtraining-nav').click(function(){ loadMainContent("our-training") });
+$('#spectraining-nav').click(function(){ loadMainContent("spec-training") });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

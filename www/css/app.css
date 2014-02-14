@@ -40,7 +40,7 @@
         background-color: #333333;
         /*background-color: green;*/
         border-bottom: 5px solid #e51b2d;
-        z-index: 1;
+        z-index: 100;
     }
         #close{
             display: none;
@@ -54,23 +54,76 @@
         .navbox{ 
             position: relative;
             left: 20px;
-            top: 30px;
+            top: 50px;
             height: 500px;
             width: 650px;
-            background-color: green;
         }
 
+        .selectbox{
+            margin: 0px 30px 30px 50px;
+            display: block;
+            height: 234px;
+            width: 236px;
+            background: transparent url('../img/select-box.png') top left no-repeat;
+            float: left;
+        }
+            .selectbox-content{}
+            .selectbox-content img{ 
+                position: relative;
+                top: 3px;
+                left: 3px;
+                border: 5px solid #1f1f1f;
+                height: 81px;
+                width: 220px;
+            }
+
+            .selectbox-content h2{
+                font: 15px normal Arial, sans-serif;
+                color: #fff;
+                text-transform: uppercase;
+                margin: 8px 0px 0px 8px;
+            }
+
+            .selectbox-content p{
+                font: 13px normal Arial, sans-serif;
+                color: #999999;
+                margin: 8px 0px 0px 8px;
+                width: 220px;
+            }
+
     #arrow{
+        
         position: absolute;
         top: 372px;
-        left: 229px;
+        left: -27px;
     }
 
+
+
 #main{
-    background-color: blue;
+    /*background-color: blue;*/
+    position: absolute;
+    top: 0px;
+    left: 0px;
     margin-left: 255px;
     width: 1025px;
     height: 800px;
-    background: transparent url('../img/splash.jpg') top left no-repeat; 
+  /*  background: transparent url('../img/splash.jpg') top left no-repeat; */
 }
+
+
+    .content{ margin: 40px; }
+    .topbar{
+        height: 32px;
+        width: 975px;
+        background: transparent url('../img/serviceshop-top-bar.jpg') top left no-repeat;
+    }
+
+    .content h1{
+        font: normal 18px GalaxiePolarisCondensed-Book;
+        text-transform: uppercase;
+        text-align: left;
+        color: #999999;
+    }
+    .content .section-title{ color: #00ae9e; font-family: GalaxiePolarisCondensed-Bold; }
 
