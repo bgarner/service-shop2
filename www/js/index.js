@@ -181,18 +181,12 @@ var loadIndex = function(){
             $('.navitem').off('click');
         });   
 
-
     } else {
     
         $('#main').fadeOut(10);
-        $('#main').load("content/index-content.html").fadeIn(500);    
-      
-    }
-
-
- 
+        $('#main').load("content/index-content.html").fadeIn(500);     
+    } 
 }
-
 
 $('#logo').click(function(){  loadIndex() });
 //services
