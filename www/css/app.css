@@ -125,9 +125,94 @@
     }
     .content .section-title{ color: #00ae9e; font-family: GalaxiePolarisCondensed-Bold; }
 
+    #priceboard-left{ width: 360px; float: left; padding-top: 15px;}
+    #priceboard-right{ width: 360px; float: left; padding-top: 15px;}
+
+    dl { width: 350px; font-family: GalaxiePolarisCondensed-Bold; color: #333; padding: 0; margin: 0;}
+    dt { float: left; width: 300px; overflow: hidden; white-space: nowrap; padding: 0; margin: 0;}
+    dd { color: #c00; font-size: 20px;float: left; width: 50px; overflow: hidden; padding: 0; margin: 0;}
+
+    dt span{
+        text-transform: uppercase;
+        font-size: 20px;
+    }
+    dt span.name:after { font-size: 8px; color: #666; content: " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  . .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ." }
+
+    .cents{color: #c00; font-size: 10px; position: relative; bottom: 8px; left: 3px; text-transform: uppercase;}
+    .name{
+     
+        text-transform: uppercase;
+        font-size: 20px;
+    
+    
+    }  
+
+   .desc{
+        clear: both;
+        text-transform: uppercase;
+        font-family: GalaxiePolarisCondensed-Light;
+        font-size: 12px;
+        display: block;
+    }    
+/*    .service{
+        width: 400px;
+        overflow: hidden; white-space: nowrap;
+    }*/
+
+/*    .dots{
+        font-size: 8px;
+        color: #666;
+    }
+
+    .service-name{
+        float: left;
+        text-transform: uppercase;
+        font-size: 20px;
+        overflow: hidden; white-space: nowrap;
+        display: inline-block;
+    
+    }    
+
+    .service-price{
+        color: #c00;
+        font-size: 20px;
+        text-align: left;  
+    
+    
+    }    
+
+    .service-name:after { 
+        font-size: 8px;
+        display: inline-block;
+        color: #666;
+        float: right;
+        overflow: hidden; white-space: nowrap;
+
+        content: " .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ." ;
+    }
+
+  
+
+    .service-desc{
+        clear: both;
+        text-transform: uppercase;
+        font-family: GalaxiePolarisCondensed-Light;
+        font-size: 12px;
+        display: block;
+    }
+*/
+
+
+/*    .cents{
+        font-size: 10px;
+        position: relative;
+        bottom: 8px;
+        left: 3px;
+    }
+*/  
     .sidebar{ float: right;}
     .sidebar a{ text-decoration: none;}
-    .maincontent{ float: left;}
+    .maincontent{ float: left; width: 723px;}
 
     .dyk-box{
         background-color: #333333;
