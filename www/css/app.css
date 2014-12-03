@@ -23,7 +23,7 @@
     margin: 0;
 }
 
-    #nav span.navitem{
+    #nav span.navitem, .navitem-home{
         color: #fff; text-decoration: none; display: block;
         padding: 20px 0px 20px 0px;
     }
@@ -308,10 +308,11 @@
     }
 
     .modalDialog > div {
-        width: 855px;
+        /*width: 855px;*/
+        width: 1000px;
         position: relative;
         margin: 10% auto;
-        padding: 5px 20px 13px 20px;
+        /*padding: 5px 20px 13px 20px;*/
         /*border-radius: 10px;*/
         /*background: #000;*/
         background: transparent;
@@ -323,7 +324,7 @@
         color: #FFFFFF;
         line-height: 50px;
         position: absolute;
-        right: -12px;
+        right: -15px;
         text-align: center;
         top: -10px;
         width: 50px;

@@ -54,7 +54,7 @@ $( document ).ready(function() {
     $('.navitem').click(function(){
         var id = $(this).attr('id');
         openPanel(id);
-        $('.navitem').off('click'); //disable nav        
+        $('.navitem').off('click'); //disable nav
     });
 
     $('#close').click(function(){
@@ -69,7 +69,7 @@ $( document ).ready(function() {
 });
 
 var openPanel = function(id){
-    
+
     $("#panel").addClass("open");
     $("#arrow").hide();
 
@@ -80,12 +80,12 @@ var openPanel = function(id){
             $("#training").addClass("grey");
         break;
 
-        case "how": 
+        case "how":
             $("#services").addClass("grey");
             $("#training").addClass("grey");
         break;
 
-        case "training": 
+        case "training":
             $("#services").addClass("grey");
             $("#how").addClass("grey");
         break;
@@ -95,7 +95,7 @@ var openPanel = function(id){
       width: "+=750"
       }, 300, function() {
         // Animation complete.
-        $("#close").fadeIn();  
+        $("#close").fadeIn();
         loadNavContent(id);
     });
 }
@@ -151,7 +151,7 @@ var loadMainContent = function(c){
         var id = $(this).attr('id');
         openPanel(id);
         $('.navitem').off('click');
-    });      
+    });
 }
 
 var loadIndex = function(){
@@ -179,16 +179,17 @@ var loadIndex = function(){
             var id = $(this).attr('id');
             openPanel(id);
             $('.navitem').off('click');
-        });   
+        });
 
     } else {
-    
+
         $('#main').fadeOut(10);
-        $('#main').load("content/index-content.html").fadeIn(500);     
-    } 
+        $('#main').load("content/index-content.html").fadeIn(500);
+    }
 }
 
 $('#logo').click(function(){  loadIndex() });
+$('#returnhome').click(function(){  loadIndex() });
 //services
 $('#snowservices-nav').click(function(){   loadMainContent("snow-services")   });
 $('#hockeyservices-nav').click(function(){ loadMainContent("hockey-services") });
@@ -204,18 +205,3 @@ $('#otherhow-nav').click(function(){ loadMainContent("other-how") });
 //training
 $('#ourtraining-nav').click(function(){ loadMainContent("our-training") });
 $('#spectraining-nav').click(function(){ loadMainContent("spec-training") });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
